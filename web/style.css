@@ -1,0 +1,18 @@
+.container{
+    display:flex;
+    
+}
+
+.card{
+    background-color: red;
+    display: flex;
+    width: 800px;
+
+}
+
+/* se usara si o si el el padre y luego hijo */
+.card > .card-left{
+    background-color: blue;
+    height: 100%;
+    width: 120px;
+}

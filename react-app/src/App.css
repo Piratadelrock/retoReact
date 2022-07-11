@@ -1,26 +1,63 @@
-.container{
+/* .container{
   display:flex;
   flex-flow: row wrap;
 }
 
 .card{
-  /* background-color: red; */
+  background-color: red;
   border:1px solid gray;
   display: flex;
   margin: 10px;
   padding: 10px;
   width: 600px;
 
-}
+} */
 
 /* se usara si o si el el padre y luego hijo */
-.card > .card-left{
+/* .card > .card-left{
   background-color: blue;
   margin-right: 10px;
   height: 100%;
   width: 120px;
+} */
+* {
+  margin: 0;
+  padding: 0;
 }
 
+.card-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+
+.card-container .card-btn{
+  padding: .5rem 1rem;
+  border: 2px solid black;
+  border-radius: .25rem;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: space-between;
+
+}
+
+.card-description{
+  --lh: calc(1rem * 1.5);
+  line-height: var(--lh);
+  height: calc(var(--lh) * 2);
+  overflow: hidden;
+}
+
+.card-price{
+  font-size: 1.2em;
+  color: hsl(137, 87%, 44%);
+}
 
 .App {
   text-align: center;

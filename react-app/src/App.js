@@ -1,35 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Persona } from "./Persona";
 import Card from "./Card";
+import { getProducts } from './productos';
 
-
-  const info = [
-
-    {
-      category: "Entretenimiento",
-      title: "‘Thor: Love and Thunder’ hace de los cortos de Darryl canon en el MCU",
-    },
-    {
-      category: "CRIPTOMONEDAS",
-      title: "Aumentan las estafas con criptomonedas en YouTube",
-    },
-    {
-      category: "APSS & SOFTWARE",
-      title: "Google propone dividir su negocio publicitario ante señalamientos anticompetitivos",
-    },
-  ];
 
 function App() {
-
-
   return (
-    <section class="container">
-      {info.map((item)=><Card category={item.category} title={item.title}/>)}
+    <section class="card-container">
+      {getProducts().slice(1,20).map((item) => (
+        <Card key={item.id} title={item.title} description={item.description} price={item.price} image={item.images[0]} category={item.category} />
+      ))}
     </section>
   );
- 
-
 }
 
 export default App;
